@@ -1,5 +1,4 @@
 import 'package:chatappnosql/pages/chat_page.dart';
-import 'package:chatappnosql/services/auth/auth_service.dart';
 import 'package:chatappnosql/services/chat/chat_service.dart';
 import 'package:chatappnosql/themes/theme_provider.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +13,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final ChatService _chatService = ChatService();
-  final AuthService _authService = AuthService();
+  //final AuthService _authService = AuthService();
 
   @override
   void initState() {
@@ -94,7 +93,10 @@ class _HomePageState extends State<HomePage> {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return Center(
             child: CircularProgressIndicator(
-              color: isDarkMode ? ThemeProvider.darkModeAccent : ThemeProvider.primaryYellow,
+              color:
+                  isDarkMode
+                      ? ThemeProvider.darkModeAccent
+                      : ThemeProvider.primaryYellow,
             ),
           );
         }
@@ -131,10 +133,11 @@ class _HomePageState extends State<HomePage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => ChatPage(
-                        receiverUserEmail: user['email'],
-                        receiverUserID: user['uid'],
-                      ),
+                      builder:
+                          (context) => ChatPage(
+                            receiverUserEmail: user['email'],
+                            receiverUserID: user['uid'],
+                          ),
                     ),
                   );
                 },

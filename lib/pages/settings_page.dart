@@ -1,6 +1,3 @@
-import 'package:chatappnosql/components/my_app_bar.dart';
-import 'package:chatappnosql/components/my_button.dart';
-import 'package:chatappnosql/pages/blocked_users_page.dart';
 import 'package:chatappnosql/services/auth/auth_service.dart';
 import 'package:chatappnosql/themes/theme_provider.dart';
 import 'package:flutter/cupertino.dart';
@@ -22,9 +19,7 @@ class SettingsPage extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-      appBar: AppBar(
-        title: const Text("Settings"),
-      ),
+      appBar: AppBar(title: const Text("Settings")),
       body: Padding(
         padding: const EdgeInsets.all(25.0),
         child: Column(
@@ -32,9 +27,10 @@ class SettingsPage extends StatelessWidget {
           children: [
             // APPEARANCE SECTION
             Container(
-              decoration: isDarkMode
-                  ? ThemeProvider.neoBrutalistDecorationDark
-                  : ThemeProvider.neoBrutalistDecoration,
+              decoration:
+                  isDarkMode
+                      ? ThemeProvider.neoBrutalistDecorationDark
+                      : ThemeProvider.neoBrutalistDecoration,
               child: Padding(
                 padding: const EdgeInsets.all(25.0),
                 child: Column(
@@ -72,9 +68,10 @@ class SettingsPage extends StatelessWidget {
 
             // ABOUT SECTION
             Container(
-              decoration: isDarkMode
-                  ? ThemeProvider.neoBrutalistDecorationDark
-                  : ThemeProvider.neoBrutalistDecoration,
+              decoration:
+                  isDarkMode
+                      ? ThemeProvider.neoBrutalistDecorationDark
+                      : ThemeProvider.neoBrutalistDecoration,
               child: Padding(
                 padding: const EdgeInsets.all(25.0),
                 child: Column(
